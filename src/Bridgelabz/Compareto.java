@@ -1,7 +1,7 @@
 package Bridgelabz;
-import java.util.Scanner;
-public class Greaterline {
-    void greaterLine() {
+import java.util.*;
+public class Compareto {
+    void compareTo() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Line 1 inputs :");
         System.out.println("Enter x1 Co-ordinate = ");
@@ -26,17 +26,22 @@ public class Greaterline {
         double length1 = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
         double length2 = Math.sqrt(Math.pow(p2 - p1, 2) + Math.pow(q2 - q1, 2));
 
-        if (length1 == length2) {
-            System.out.println("Two Lines are Equal.");
-        } else if (length1 > length2) {
+        String s1 = String.valueOf(length1);
+        String s2 = String.valueOf(length2);
+
+        double output = s1.compareTo(s2);
+
+        if (output>0) {
             System.out.println("Line 1 is greater than Line 2.");
-        } else {
+        } else if (output<0) {
             System.out.println("Line 2 is greater than Line 1");
+        } else {
+            System.out.println("Both lines are equal");
         }
+
     }
     public static void main(String[] args) {
-        Greaterline runner = new Greaterline();
-        runner.greaterLine();
+        Compareto runner = new Compareto();
+        runner.compareTo();
     }
-    
 }
